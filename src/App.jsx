@@ -1,20 +1,21 @@
-import React, { useRef } from 'react'
+import React, {  useState } from 'react'
 
 function App() {
-     const name = useRef(null);
-     const age = useRef(null);
+     const[val, setVal] = useState({name: "",age: ""});
 
      const handleSubmit =(event)=>{
       event.preventDefault();
-      console.log(name.current.value, age.current.value);
+      console.log(val);
      }
 
     return (
+      <div className="">
    <form action="" onSubmit={handleSubmit}>
-    <input ref={name} placeholder='name' type="text" />
-    <input ref={age} placeholder='age' type="text" />
+    <input onChange={(event)=>setVal({...val,name:event.currentTarget.value})}  placeholder='name' type="text" />
+    <input onChange={(event)=>setVal({...val,age:event.currentTarget.value})} placeholder='age' type="text" />
     <input type="submit" />
    </form>
+   </div>
   )
 }
 
