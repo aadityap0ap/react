@@ -1,22 +1,18 @@
-import React, {  useState } from 'react'
+import React from 'react'
+import Cards from './Components/Cards'
+import Form from './Components/Form'
 
 function App() {
-     const[val, setVal] = useState({name: "",age: ""});
-
-     const handleSubmit =(event)=>{
-      event.preventDefault();
-      console.log(val);
-     }
-
-    return (
-      <div className="">
-   <form action="" onSubmit={handleSubmit}>
-    <input onChange={(event)=>setVal({...val,name:event.currentTarget.value})}  placeholder='name' type="text" />
-    <input onChange={(event)=>setVal({...val,age:event.currentTarget.value})} placeholder='age' type="text" />
-    <input type="submit" />
-   </form>
-   </div>
+  return (
+    <div className='w-full h-screen bg-zinc-200 flex items-center justify-center'>
+      <div className='container mx-auto'>
+        <Cards />
+        <Form />
+      </div>
+    </div>
   )
+
+  
 }
 
 export default App
