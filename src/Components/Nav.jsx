@@ -12,6 +12,7 @@ function Nav() {
               [
           e.isActive ? "text-red-300" : "",
           e.isActive ? "font-bold" : "",
+          e.isActive ? "text-6xl" : "",
         ].join(" ")} 
         >
              Home
